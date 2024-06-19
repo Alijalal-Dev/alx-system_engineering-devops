@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type f -iname "*.gif" -print0 | xargs -0 -I {} basename "{}" .gif | sort -f
