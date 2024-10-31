@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Bash script that prints "Best School" nine times
+#	& "Hi" on the tenth iteration using a while loop
+
+count=0
+
+while [ $count -lt 10 ]
+do
+	if [ $count -eq 9 ]
+	then
+		echo "Hi"
+	fi
+	echo "Best School"
+	(( count++ ))
+done
