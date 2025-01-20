@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# set up haproxy
+
+sudo apt-get -y install haproxy
+sudo chown "$USER":"$USER" /etc/haproxy/haproxy.cfg
+sudo chown "$USER":"$USER" /etc/default/haproxy
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+sed -i '/504.http/a \\nlisten http-in\n\tbind *:80\n\tmode http\n\tbalance roundrobin\n\tserver web-01 54.89.136.45:80 check\n\tserver web-02 18.207.233.210:80 check' /etc/haproxy/haproxy.cfg
+
+sudo service haproxy start
