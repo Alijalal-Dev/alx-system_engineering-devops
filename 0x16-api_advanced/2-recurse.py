@@ -3,6 +3,7 @@
 
 from requests import get
 
+
 def recurse(subreddit, hot_list=[], after="", count=0):
     """
     Recursively retrieve a list of titles from a given subreddit.

@@ -3,6 +3,7 @@
 
 from requests import get
 
+
 def top_ten(subreddit):
     """
     Print the titles of the top ten posts from a given subreddit.

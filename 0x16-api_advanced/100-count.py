@@ -3,6 +3,7 @@
 
 from requests import get
 
+
 def count_words(subreddit, word_list, instances={}, after="", count=0):
     """
     Count occurrences of words in titles of posts from a subreddit.
