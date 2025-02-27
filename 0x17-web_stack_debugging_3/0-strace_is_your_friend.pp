@@ -1,6 +1,7 @@
-# fixing apache 500 error
+# a puppet code that fixes a wordpress site 5xx error to 200 ok
+# editing the mistyped .phpp to php in the /var/www/html/wp-settings.php file
 
-exec { 'Fixing 500 error':
-  command  => 'sudo sed -i "s/.phpp/.php/" /var/www/html/wp-settings.php',
-  provider => shell,
+exec { 'fix-wordpess-server-error':
+    command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+    path    => '/usr/bin/:/bin/',
 }
